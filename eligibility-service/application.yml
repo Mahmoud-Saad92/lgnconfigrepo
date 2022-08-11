@@ -1,0 +1,8 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: eligibility-service
+my:
+  config:
+    name: ma7moud
