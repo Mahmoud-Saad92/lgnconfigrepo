@@ -3,3 +3,38 @@ server:
 spring:
   application:
     name: apigw-service
+  cloud:
+    gateway:
+      routes:
+        - id: exclient-service
+          uri: lb://exclient-service
+          predicates:
+            - Path=/exclient/**
+          filters:
+            - PrefixPath=/api/v1/lgn/exclient
+            - RewritePath=/exclient/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: insuredclient-service
+          uri: lb://insuredclient-service
+          predicates:
+            - Path=/insuredclient/**
+          filters:
+            - PrefixPath=/api/v1//lgn/insuredclient
+            - RewritePath=/insuredclient/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: yakeen-service
+          uri: lb://yakeen-service
+          predicates:
+            - Path=/yakeen/**
+          filters:
+            - PrefixPath=/api/v1/lgn/yakeen
+            - RewritePath=/yakeen/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: eligibility-service
+          uri: lb://eligibility-service
+          predicates:
+            - Path=/eligibility/**
+          filters:
+            - PrefixPath=/api/v1/lgn/eligibility
+            - RewritePath=/eligibility/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
