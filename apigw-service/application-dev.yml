@@ -1,8 +1,8 @@
+spring:
+  cloud:
+    loadbalancer.ribbon.enabled: false
 eureka:
   client:
     enabled: false
     register-with-eureka: false
     fetch-registry: false
-ribbon:
-  eureka:
-    enabled: false
