@@ -5,5 +5,4 @@ spring:
     name: eligibility-service
 apigw:
   config:
-    hostname: ${APIGW_HOSTNAME:localhost}
-    port: ${APIGW_PORT:8080}
+    hostname: ${APIGW_HOSTNAME:apigw-service}

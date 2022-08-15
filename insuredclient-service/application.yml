@@ -3,3 +3,6 @@ server:
 spring:
   application:
     name: insuredclient-service
+apigw:
+  config:
+    hostname: ${APIGW_HOSTNAME:apigw-service}
