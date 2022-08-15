@@ -1,8 +1,17 @@
 spring:
   cloud:
-    loadbalancer.ribbon.enabled: false
+    gateway:
+      discovery.locator:
+        enabled: false
 eureka:
   client:
     enabled: false
     register-with-eureka: false
     fetch-registry: false
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+    com.elm.sa: DEBUG
