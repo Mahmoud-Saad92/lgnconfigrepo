@@ -1,8 +1,11 @@
 spring:
   cloud:
-    gateway:
-      discovery.locator:
+    loadbalancer:
+      ribbon:
         enabled: false
+      instances:
+        - name: eligibility-service
+          servers: http://localhost:8080
 eureka:
   client:
     enabled: false
