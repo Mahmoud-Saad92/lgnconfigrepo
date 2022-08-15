@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: eligibility-service
-my:
+apigw:
   config:
-    name: ma7moud
+    hostname: ${APIGW_HOSTNAME:localhost}
+    port: ${APIGW_PORT:8080}
