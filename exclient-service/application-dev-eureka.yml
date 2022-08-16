@@ -6,3 +6,8 @@ eureka:
       defaultZone: http://${EUREKA_HOSTNAME:localhost}:${EUREKA_PORT:8070}/eureka/
   instance:
     prefer-ip-address: true
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.elm.sa.lgn.exclientservice: DEBUG

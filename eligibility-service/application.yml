@@ -6,3 +6,5 @@ spring:
 apigw:
   config:
     hostname: ${APIGW_HOSTNAME:apigw-service}
+insurance:
+  expiration-days: 30
