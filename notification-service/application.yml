@@ -3,3 +3,13 @@ server:
 spring:
   application:
     name: notification-service
+rabbitmq:
+  exchanges:
+    ex-client: ex-client.exchange
+    insured-client: insured-client.exchange
+  queues:
+    ex-client: ex-client.queue
+    insured-client: insured-client.queue
+  routing-keys:
+    ex-client-notification: ex-client.notification.routing-key
+    insured-client-notification: insured-client.notification.routing-key
