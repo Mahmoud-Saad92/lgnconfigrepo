@@ -1,4 +1,16 @@
 spring:
+  datasource:
+    password: password
+    url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/lgn-db-ex-client
+    username: lgnAdmin
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
   rabbitmq:
     addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
 eureka:
