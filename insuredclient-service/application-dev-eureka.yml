@@ -1,7 +1,7 @@
 spring:
   datasource:
     password: password
-    url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/lgn-db-ex-client
+    url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/insuredclientDB
     username: lgnAdmin
   jpa:
     hibernate:
