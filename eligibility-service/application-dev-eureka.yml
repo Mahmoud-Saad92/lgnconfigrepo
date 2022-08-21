@@ -11,3 +11,12 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.elm.sa.lgn.eligibilityservice: DEBUG
+keycloak:
+  realm: elm-realm
+  auth-server-url: http://${KEYCLOAK_HOSTNAME:localhost}:${KEYCLOAK_PORT:8072}/auth
+  ssl-required: external
+  resource: lgn
+  credentials:
+    secret: ${KEYCLOAK_CREDENTIALS_SECRET}
+  use-resource-role-mappings: true
+  bearer-only: true
