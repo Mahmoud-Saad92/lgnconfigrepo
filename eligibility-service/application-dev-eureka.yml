@@ -13,7 +13,7 @@ logging:
     com.elm.sa.lgn.eligibilityservice: DEBUG
 keycloak:
   realm: elm-realm
-  auth-server-url: http://${KEYCLOAK_HOSTNAME}
+  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080
   ssl-required: external
   resource: lgn
   credentials:
