@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8075
 spring:
   application:
     name: apigw-service
