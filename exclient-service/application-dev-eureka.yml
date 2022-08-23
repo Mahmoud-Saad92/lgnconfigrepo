@@ -28,7 +28,7 @@ logging:
     com.elm.sa.lgn.exclientservice: DEBUG
 keycloak:
   realm: elm-realm
-  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080
+  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080/auth
   ssl-required: external
   resource: lgn
   credentials:
