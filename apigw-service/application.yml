@@ -13,7 +13,7 @@ spring:
           filters:
             - PrefixPath=/api/v1/lgn/exclient
             - RewritePath=/exclient/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - RemoveRequestHeader=Cookie,Set-Cookie
         - id: insuredclient-service
           uri: lb://insuredclient-service
           predicates:
@@ -21,7 +21,7 @@ spring:
           filters:
             - PrefixPath=/api/v1//lgn/insuredclient
             - RewritePath=/insuredclient/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - RemoveRequestHeader=Cookie,Set-Cookie
         - id: yakeen-service
           uri: lb://yakeen-service
           predicates:
@@ -29,7 +29,7 @@ spring:
           filters:
             - PrefixPath=/api/v1/lgn/yakeen
             - RewritePath=/yakeen/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - RemoveRequestHeader=Cookie,Set-Cookie
         - id: eligibility-service
           uri: lb://eligibility-service
           predicates:
@@ -37,7 +37,7 @@ spring:
           filters:
             - PrefixPath=/api/v1/lgn/eligibility
             - RewritePath=/eligibility/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - RemoveRequestHeader=Cookie,Set-Cookie
         - id: router-service
           uri: lb://router-service
           predicates:
@@ -45,4 +45,4 @@ spring:
           filters:
             - PrefixPath=/api/v1/lgn/router
             - RewritePath=/router/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - RemoveRequestHeader=Cookie,Set-Cookie

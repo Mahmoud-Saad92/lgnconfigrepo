@@ -13,10 +13,11 @@ logging:
     com.elm.sa.lgn.eligibilityservice: DEBUG
 keycloak:
   realm: elm-realm
-  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080/auth
+  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080
   ssl-required: external
   resource: lgn
   credentials:
     secret: ${KEYCLOAK_CREDENTIALS_SECRET}
   use-resource-role-mappings: true
   bearer-only: true
+  principal-attribute: preferred_username
