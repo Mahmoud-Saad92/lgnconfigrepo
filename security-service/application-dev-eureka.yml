@@ -1,7 +1,7 @@
 spring:
   datasource:
     password: password
-    url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/exclientdb
+    url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/securitydb
     username: lgnAdmin
   jpa:
     hibernate:
@@ -11,8 +11,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-  rabbitmq:
-    addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
 eureka:
   client:
     register-with-eureka: true
@@ -25,14 +23,4 @@ logging:
   level:
     com.netflix: WARN
     org.springframework.web: WARN
-    com.elm.sa.lgn.exclientservice: DEBUG
-#keycloak:
-#  realm: elm-realm
-#  auth-server-url: http://${KEYCLOAK_HOSTNAME}:8080
-#  ssl-required: external
-#  resource: lgn
-#  credentials:
-#    secret: ${KEYCLOAK_CREDENTIALS_SECRET}
-#  use-resource-role-mappings: true
-#  bearer-only: true
-#  principal-attribute: preferred_username
+    com.elm.sa.lgn.securityservice: DEBUG

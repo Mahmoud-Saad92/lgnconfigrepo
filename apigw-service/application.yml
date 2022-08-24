@@ -1,5 +1,5 @@
 server:
-  port: 8075
+  port: 8080
 spring:
   application:
     name: apigw-service
@@ -44,5 +44,13 @@ spring:
             - Path=/router/**
           filters:
             - PrefixPath=/api/v1/lgn/router
+            - RewritePath=/router/(?<path>.*), /$\{path}
+            - RemoveRequestHeader=Cookie,Set-Cookie
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/security/**
+          filters:
+            - PrefixPath=/api/v1/lgn/security
             - RewritePath=/router/(?<path>.*), /$\{path}
             - RemoveRequestHeader=Cookie,Set-Cookie
