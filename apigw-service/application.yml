@@ -51,6 +51,6 @@ spring:
           predicates:
             - Path=/security/**
           filters:
-            - PrefixPath=/api/v1/lgn
+            - PrefixPath=/api/v1/lgn/security
             - RewritePath=/router/(?<path>.*), /$\{path}
             - RemoveRequestHeader=Cookie,Set-Cookie
