@@ -19,7 +19,7 @@ spring:
           predicates:
             - Path=/insuredclient/**
           filters:
-            - PrefixPath=/api/v1//lgn/insuredclient
+            - PrefixPath=/api/v1/lgn/insuredclient
             - RewritePath=/insuredclient/(?<path>.*), /$\{path}
             - RemoveRequestHeader=Cookie,Set-Cookie
         - id: yakeen-service

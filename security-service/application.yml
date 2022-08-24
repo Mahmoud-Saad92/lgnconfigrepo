@@ -3,6 +3,3 @@ server:
 spring:
   application:
     name: security-service
-apigw:
-  config:
-    hostname: ${APIGW_HOSTNAME:apigw-service}
