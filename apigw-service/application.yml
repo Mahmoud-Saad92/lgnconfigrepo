@@ -52,5 +52,5 @@ spring:
             - Path=/security/**
           filters:
             - PrefixPath=/api/v1/lgn/security
-            - RewritePath=/router/(?<path>.*), /$\{path}
+            - RewritePath=/security/(?<path>.*), /$\{path}
             - RemoveRequestHeader=Cookie,Set-Cookie
