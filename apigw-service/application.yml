@@ -4,6 +4,7 @@ spring:
   application:
     name: apigw-service
   cloud:
+    loadbalancer.ribbon.enabled: false
     gateway:
       routes:
         - id: exclient-service

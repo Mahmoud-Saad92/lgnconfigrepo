@@ -13,6 +13,8 @@ spring:
     show-sql: true
   rabbitmq:
     addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
+  cloud:
+    loadbalancer.ribbon.enabled: false
 eureka:
   client:
     register-with-eureka: true
@@ -21,6 +23,8 @@ eureka:
       defaultZone: http://${EUREKA_HOSTNAME:localhost}:${EUREKA_PORT:8070}/eureka/
   instance:
     prefer-ip-address: true
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
 logging:
   level:
     com.netflix: WARN

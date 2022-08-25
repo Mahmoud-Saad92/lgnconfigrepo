@@ -1,4 +1,6 @@
 spring:
+  cloud:
+    loadbalancer.ribbon.enabled: false
   datasource:
     password: password
     url: jdbc:postgresql://${POSTGRES_USER_HOSTNAME:localhost}:5432/routerdb
@@ -19,6 +21,8 @@ eureka:
       defaultZone: http://${EUREKA_HOSTNAME:localhost}:${EUREKA_PORT:8070}/eureka/
   instance:
     prefer-ip-address: true
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
 logging:
   level:
     com.netflix: WARN
