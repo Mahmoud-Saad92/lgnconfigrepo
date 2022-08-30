@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:coredb;DB_CLOSE_DELAY=-1
+    username: sa
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      platform: h2

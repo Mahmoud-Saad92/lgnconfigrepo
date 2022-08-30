@@ -1,8 +1,0 @@
-server:
-  port: 8086
-spring:
-  application:
-    name: router-service
-apigw:
-  config:
-    hostname: ${APIGW_HOSTNAME:apigw-service}

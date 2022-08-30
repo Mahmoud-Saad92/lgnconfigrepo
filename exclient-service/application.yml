@@ -1,8 +1,0 @@
-server:
-  port: 8082
-spring:
-  application:
-    name: exclient-service
-apigw:
-  config:
-    hostname: ${APIGW_HOSTNAME:apigw-service}

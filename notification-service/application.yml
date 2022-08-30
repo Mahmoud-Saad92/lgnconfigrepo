@@ -1,15 +1,19 @@
 server:
-  port: 8084
+  port: ${SERVER_PORT:8084}
 spring:
   application:
     name: notification-service
+  rabbitmq:
+    addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
 rabbitmq:
   exchanges:
-    ex-client: ex-client.exchange
-    insured-client: insured-client.exchange
+    core: core.exchange
   queues:
-    ex-client: ex-client.queue
-    insured-client: insured-client.queue
+    core: core.queue
   routing-keys:
-    ex-client-notification: ex-client.notification.routing-key
-    insured-client-notification: insured-client.notification.routing-key
+    core-notification: core.notification.routing-key
+logging:
+  level:
+    org.springframework.web: WARN
+    com.elm.sa.lgn.notificationservice: DEBUG
+    com.elm.sa.lgn.amqp: DEBUG

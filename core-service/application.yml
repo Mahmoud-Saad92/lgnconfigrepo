@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8083}
+spring:
+  application:
+    name: core-service
+  rabbitmq:
+    addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
+logging:
+  level:
+    org.springframework.web: WARN
+    com.elm.sa.lgn.coreservice: DEBUG
+    com.elm.sa.lgn.amqp: DEBUG
+lgn:
+  middleware:
+    secret-token: "test-token"
+    app-id: "test-token"
+    app-key: "test-token"
+    #    operator-id: "1000011021"
+    client-ip-address: "10.0.0.0"
+    lang: "ar"
+    base-url: "https://yakeen-middleware.dev-apps.elm.sa"
+    person-basic-info-url: "/api/v1/yakeen/mw/person/getPersonBasicInfo"
+    vehicle-info-url: "/api/v1/yakeen/mw/vehicle/getVehicleInfo"
+    vehicles-url: "/api/v1/yakeen/mw/vehicle/getListVehicles"
+    vehicle-policy-info-url: "/api/v1/yakeen/mw/vehicle/getListVehiclePolicyInfo"
+  business:
+    custom:
+      insurance-expiration-days: 30
+      already-inquired-client-expiration-days: 30
