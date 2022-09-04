@@ -5,6 +5,13 @@ spring:
     name: core-service
   rabbitmq:
     addresses: '${RABBITMQ_HOSTNAME:localhost}:5672'
+rabbitmq:
+  exchanges:
+    notification: notification.exchange
+  queues:
+    notification: notification.queue
+  routing-keys:
+    notification-core: notification.core.routing-key
 logging:
   level:
     org.springframework.web: WARN
